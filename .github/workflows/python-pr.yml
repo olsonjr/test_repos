@@ -24,19 +24,9 @@ jobs:
         pip install -r requirements_dev.txt
     - name: Lint with pylint
       run: |
-        pylint tests/ 2>&1 > pylint_report.txt
-    - name: Upload pylint output file
-      uses: actions/upload-artifact@v2
-      with:
-        name: pylint_report
-        path: pylint_report.txt
+        pylint tests/
     - name: Test with coverage
       run: |
         coverage run --source=. -m unittest
         coverage report
         coverage html
-    - name: Upload coverage output file
-      uses: actions/upload-artifact@v2
-      with:
-        name: coverage_html
-        path: htmlcov/
