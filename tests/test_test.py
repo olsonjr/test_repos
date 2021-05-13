@@ -13,4 +13,3 @@ class TestCaseCase(unittest.TestCase):
         """This test asserts that the function returns true."""
 
         self.assertTrue(testable_func())
-
